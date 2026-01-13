@@ -22,7 +22,8 @@ namespace QLBanSach
         {
             using (SqlConnection conn = new SqlConnection(strConn))
             {
-                string sql = "SELECT * FROM Sach WHERE TenSach LIKE @ten ORDER BY MaSach DESC";
+                string sql = "SELECT * FROM Sach WHERE TenSach LIKE @ten ORDER BY NgayCapNhat DESC";
+
                 SqlDataAdapter da = new SqlDataAdapter(sql, conn);
                 da.SelectCommand.Parameters.AddWithValue("@ten", "%" + txtTen.Text + "%");
 
